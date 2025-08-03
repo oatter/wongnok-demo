@@ -7,7 +7,6 @@ const prompt = Prompt({
   weight: ['400', '700']
 })
 
-
 export default function DashboardLayout({
   children,
 }: {
@@ -15,7 +14,7 @@ export default function DashboardLayout({
 }) {
   return (
     <html lang="en" className={prompt.className}>
-      <body className="container mx-auto px-4">
+      <body className="mx-32">
         <main>{children}</main>
       </body>
     </html>
