@@ -99,7 +99,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className="text-4xl font-bold">สูตรอาหารทั้งหมด</h1>
+      <h1 className="text-4xl font-bold pb-8">สูตรอาหารทั้งหมด</h1>
       <div className="flex flex-wrap gap-6 items-baseline">
         {data.map((recipe) => (
           <RecipeCard key={recipe.name} recipe={recipe} />
