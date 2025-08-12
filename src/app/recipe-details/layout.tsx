@@ -1,18 +1,31 @@
+"use client";
+
 import { Button } from "@/styles/components/ui/button";
-import Link from "next/link";
+import { useSession, signOut, signIn } from "next-auth/react";
 
 export default function RecipeDetailLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const { data: session } = useSession();
+
   return (
     <section>
-      <Link href={`/`}>
-        <Button variant="outline">Button</Button>
-      </Link>
+      <Button variant="outline">Button</Button>
+      {session ? (
+        <>
+          Signed in as {session?.user?.email} <br />
+          <Button onClick={() => signOut()}>Sign out</Button>
+        </>
+      ) : (
+        <>
+          Not signed in <br />
+          <Button onClick={() => signIn('keycloak')}>Sign in</Button>
+        </>
+      )}
 
-      {children}
+      <main>{children}</main>
     </section>
   );
 }

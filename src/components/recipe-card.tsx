@@ -31,7 +31,7 @@ export interface Recipe {
 
 const RecipeCard = ({ recipe }: { recipe: Recipe }) => (
   <div>
-    <Card className="max-w-[276px] max-h-[390px]">
+    <Card className="max-w-[278px] max-h-[390px]">
       <CardContent>
         <div className="relative h-[158px] rounded-t-lg">
           <Image

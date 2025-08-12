@@ -1,7 +1,6 @@
 import RecipeCard, { Recipe } from "@/components/recipe-card";
 
-const Home = () => {
-  console.log("hello ");
+const Dashboard = () => {
   const data: Recipe[] = [
     {
       id: 1,
@@ -97,11 +96,10 @@ const Home = () => {
       updatedAt: "2025-08-03T10:04:00.000Z",
     },
   ];
-
   return (
     <div>
       <h1 className="text-4xl font-bold pb-8">สูตรอาหารทั้งหมด</h1>
-      <div className="flex flex-wrap gap-6 items-baseline">
+      <div className="flex flex-wrap gap-8 items-baseline">
         {data.map((recipe) => (
           <RecipeCard key={recipe.name} recipe={recipe} />
         ))}
@@ -109,4 +107,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default Dashboard;
